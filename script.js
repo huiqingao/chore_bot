@@ -20,3 +20,9 @@ let doorImage3 = document.getElementById('door3');
 doorImage3.onclick = () => {
     doorImage3.src = spaceDoorPath;
 };
+
+// Randomly generate what's behind doors
+let numClosedDoors = 3;
+const randomChoreDoorGenerata = () => {
+    let choreDoor = Math.floor(Math.random() * numClosedDoors);
+};

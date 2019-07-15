@@ -12,32 +12,41 @@ const playDoor = () => {
     }
 };
 
+// Determine whether a door is open
+const isClicked = (door) => {
+    if (door.src === closedDoorPath) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
 // Door #1
 let doorImage1 = document.getElementById('door1');
 doorImage1.onclick = () => {
     doorImage1.src = openDoor1;
-    const isClicked = (door) => {
-        if (door.src === closedDoorPath) {
-            return false;
-        } else {
-            return true;
-        }
+    if (!isClicked(doorImage1)) {
+        playDoor();
     };
-    playDoor();
+    
 };
 
 // Door #2
 let doorImage2 = document.getElementById('door2');
 doorImage2.onclick = () => {
     doorImage2.src = openDoor2;
-    playDoor();
+    if (!isClicked(doorImage2)) {
+        playDoor();
+    };
 };
 
 // Door #3
 let doorImage3 = document.getElementById('door3');
 doorImage3.onclick = () => {
     doorImage3.src = openDoor3;
-    playDoor();
+    if (!isClicked(doorImage3)) {
+        playDoor();
+    };
 };
 
 // Randomly generate what's behind doors

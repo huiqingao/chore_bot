@@ -23,6 +23,18 @@ doorImage3.onclick = () => {
 
 // Randomly generate what's behind doors
 let numClosedDoors = 3;
+let openDoor1;
+let openDoor2;
+let openDoor3;
 const randomChoreDoorGenerata = () => {
     let choreDoor = Math.floor(Math.random() * numClosedDoors);
+    if (choreDoor === 0) {
+
+    } 
+    else if (choreDoor === 1) {
+
+    }
+    else {
+
+    }
 };

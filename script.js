@@ -2,6 +2,7 @@
 let botDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg";
 let beachDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg";
 let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
+let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
 
 // Task #46
 const playDoor = () => {
@@ -15,6 +16,13 @@ const playDoor = () => {
 let doorImage1 = document.getElementById('door1');
 doorImage1.onclick = () => {
     doorImage1.src = openDoor1;
+    const isClicked = (door) => {
+        if (door.src === closedDoorPath) {
+            return false;
+        } else {
+            return true;
+        }
+    };
     playDoor();
 };
 

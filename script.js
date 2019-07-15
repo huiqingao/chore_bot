@@ -7,6 +7,12 @@ doorImage1.onclick = () => {
 
 // Door #2
 let doorImage2 = document.getElementById('door2');
+doorImage2.onclick = () => {
+    
+};
 
 // Door #3
 let doorImage3 = document.getElementById('door3');
+doorImage3.onclick = () => {
+    
+};

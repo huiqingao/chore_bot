@@ -6,19 +6,19 @@ let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-
 // Door #1
 let doorImage1 = document.getElementById('door1');
 doorImage1.onclick = () => {
-    doorImage1.src = botDoorPath;
+    doorImage1.src = openDoor1;
 };
 
 // Door #2
 let doorImage2 = document.getElementById('door2');
 doorImage2.onclick = () => {
-    doorImage2.src = beachDoorPath;
+    doorImage2.src = openDoor2;
 };
 
 // Door #3
 let doorImage3 = document.getElementById('door3');
 doorImage3.onclick = () => {
-    doorImage3.src = spaceDoorPath;
+    doorImage3.src = openDoor3;
 };
 
 // Randomly generate what's behind doors
@@ -44,3 +44,5 @@ const randomChoreDoorGenerata = () => {
         openDoor2 = spaceDoorPath;
     }
 };
+
+randomChoreDoorGenerata();

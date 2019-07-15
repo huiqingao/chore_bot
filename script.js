@@ -75,7 +75,10 @@ const randomChoreDoorGenerata = () => {
 
 randomChoreDoorGenerata();
 
-function newFunction() {
-    playDoor();
-}
-
+// Game over
+let startButton = document.getElementById('start');
+const gameOver = (status) => {
+    if (status === 'win') {
+        startButton.innerHTML = 'You win! Play again?';
+    }
+};

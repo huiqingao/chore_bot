@@ -6,10 +6,13 @@ let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore
 
 // Initiate parameters
 let numClosedDoors = 3; // Set three doors
-let openDoor1; // The path of the image shown in door #1
-let openDoor2; // The path of the image shown in door #2
-let openDoor3; // The path of the image shown in door #3
-let currentlyPlaying = true; // Currently playing
+let openDoor1 = closedDoorPath; // The path of the image shown in door #1
+let openDoor2 = closedDoorPath; // The path of the image shown in door #2
+let openDoor3 = closedDoorPath; // The path of the image shown in door #3
+let currentlyPlaying = true; // Not win nor game over yet
+
+// Start the first game
+startRound();
 
 // Start a new game
 const startButton = () => {
@@ -27,8 +30,6 @@ const startRound = () => {
     currentlyPlaying = true;
     randomChoreDoorGenerator();
 };
-
-startRound();
 
 // Randomly generate what's behind doors
 const randomChoreDoorGenerator = () => {

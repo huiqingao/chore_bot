@@ -16,6 +16,9 @@ body {
 
 .instructions-title {
     display: inline;
+    font-size: 18px;
+    color: #00ffff;
+    font-family: 'Work Sans';
 }
 
 .door-frame {

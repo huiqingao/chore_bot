@@ -66,7 +66,7 @@ let numClosedDoors = 3;
 let openDoor1;
 let openDoor2;
 let openDoor3;
-const randomChoreDoorGenerata = () => {
+const randomChoreDoorGenerator = () => {
     let choreDoor = Math.floor(Math.random() * numClosedDoors);
     if (choreDoor === 0) {
         openDoor1 = botDoorPath;
@@ -85,8 +85,6 @@ const randomChoreDoorGenerata = () => {
     }
 };
 
-randomChoreDoorGenerata();
-
 // Game over
 let currentlyPlaying = true;
 const startButton = document.getElementById('start');
@@ -99,3 +97,23 @@ const gameOver = (status) => {
     }
     currentlyPlaying = false;
 };
+
+// Start a new game
+const startButton = () => {
+    if (currentlyPlaying === false) {
+        startRound();
+    }
+    
+};
+
+const startRound = () => {
+    openDoor1 = closedDoorPath;
+    openDoor2 = closedDoorPath;
+    openDoor3 = closedDoorPath;
+    numClosedDoors = 3;
+    startButton.innerHTML = 'Good luck!';
+    currentlyPlaying = true;
+    randomChoreDoorGenerator();
+};
+
+startRound();

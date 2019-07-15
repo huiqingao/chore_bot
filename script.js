@@ -3,6 +3,14 @@ let botDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-do
 let beachDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg";
 let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
 
+// Task #46
+const playDoor = () => {
+    numClosedDoors--;
+    if (numClosedDoors === 0) {
+        gameOver();
+    }
+};
+
 // Door #1
 let doorImage1 = document.getElementById('door1');
 doorImage1.onclick = () => {
@@ -46,3 +54,4 @@ const randomChoreDoorGenerata = () => {
 };
 
 randomChoreDoorGenerata();
+

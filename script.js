@@ -36,7 +36,7 @@ const isClicked = (door) => {
 // Door #1
 let doorImage1 = document.getElementById('door1');
 doorImage1.onclick = () => {    
-    if (!isClicked(doorImage1)) {
+    if (currentlyPlaying && !isClicked(doorImage1)) {
         doorImage1.src = openDoor1;
         playDoor(doorImage1);
     };
@@ -46,7 +46,7 @@ doorImage1.onclick = () => {
 // Door #2
 let doorImage2 = document.getElementById('door2');
 doorImage2.onclick = () => {
-    if (!isClicked(doorImage2)) {
+    if (currentlyPlaying && !isClicked(doorImage2)) {
         doorImage2.src = openDoor2;
         playDoor(doorImage2);
     };
@@ -55,7 +55,7 @@ doorImage2.onclick = () => {
 // Door #3
 let doorImage3 = document.getElementById('door3');
 doorImage3.onclick = () => {
-    if (!isClicked(doorImage3)) {
+    if (currentlyPlaying && !isClicked(doorImage3)) {
         doorImage3.src = openDoor3;
         playDoor(doorImage3);
     };
@@ -88,6 +88,7 @@ const randomChoreDoorGenerata = () => {
 randomChoreDoorGenerata();
 
 // Game over
+let currentlyPlaying = true;
 const startButton = document.getElementById('start');
 const gameOver = (status) => {
     if (status === 'win') {
@@ -96,4 +97,5 @@ const gameOver = (status) => {
     else {
         startButton.innerHTML = 'Game over! Play again?';
     }
+    currentlyPlaying = false;
 };

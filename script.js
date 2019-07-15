@@ -29,12 +29,12 @@ let openDoor3;
 const randomChoreDoorGenerata = () => {
     let choreDoor = Math.floor(Math.random() * numClosedDoors);
     if (choreDoor === 0) {
-
+        openDoor1 = botDoorPath;
     } 
     else if (choreDoor === 1) {
-
+        openDoor2 = botDoorPath;
     }
     else {
-
+        openDoor3 = botDoorPath;
     }
 };

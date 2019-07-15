@@ -4,11 +4,23 @@ let beachDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-
 let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
 let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
 
-// Task #46
-const playDoor = () => {
+// Check if the player wins
+const playDoor = (door) => {
     numClosedDoors--;
     if (numClosedDoors === 0) {
         gameOver('win');
+    } 
+    else if (isBot(door)) {
+        gameOver();
+    }
+};
+
+// Check if the player loses
+const isBot = (door) => {
+    if (door.src === botDoorPath) {
+        return true;
+    } else {
+        return false;
     }
 };
 
@@ -26,7 +38,7 @@ let doorImage1 = document.getElementById('door1');
 doorImage1.onclick = () => {    
     if (!isClicked(doorImage1)) {
         doorImage1.src = openDoor1;
-        playDoor();
+        playDoor(doorImage1);
     };
     
 };
@@ -36,7 +48,7 @@ let doorImage2 = document.getElementById('door2');
 doorImage2.onclick = () => {
     if (!isClicked(doorImage2)) {
         doorImage2.src = openDoor2;
-        playDoor();
+        playDoor(doorImage2);
     };
 };
 
@@ -45,7 +57,7 @@ let doorImage3 = document.getElementById('door3');
 doorImage3.onclick = () => {
     if (!isClicked(doorImage3)) {
         doorImage3.src = openDoor3;
-        playDoor();
+        playDoor(doorImage3);
     };
 };
 
@@ -80,5 +92,8 @@ const startButton = document.getElementById('start');
 const gameOver = (status) => {
     if (status === 'win') {
         startButton.innerHTML = 'You win! Play again?';
+    }
+    else {
+        startButton.innerHTML = 'Game over! Play again?';
     }
 };
